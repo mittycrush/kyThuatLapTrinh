@@ -19,6 +19,20 @@ struct Move {
 // cac vi tri co the di chuyen
 Move moveSet[8] = { {-1, -1}, { -1,0 }, { -1,1 }, { 0,1 }, { 1,1 }, { 1,0 }, { 1,-1 }, { 0,-1 } };
 
+bool isOK(int x, int y);
+void importFromFile(int& x, int& y);
+void display(vector<int> bin) ;
+void attempt(int x, int y, int& step);
+
+int main() {
+	minMove = 255;
+	int step = 0;
+	int x, y;
+	importFromFile(x, y);
+	attempt(x, y, step);
+	display(result);
+}
+
 void importFromFile(int& x, int& y) {
 	ifstream fi;
 	fi.open("HUGO.inp");
@@ -83,14 +97,4 @@ void attempt(int x, int y, int& step) {
 			step--;
 		}
 	}
-}
-
-
-int main() {
-	minMove = 255;
-	int step = 0;
-	int x, y;
-	importFromFile(x, y);
-	attempt(x, y, step);
-	display(result);
 }
