@@ -45,8 +45,8 @@ int longestSubset(int n) {
 ```
 ## **Improved by using Binary Search**
 > Concept: 
-* We will have array B with the meaning:
-B[k] is the ending value of a subset increasing the length k (at the time being calculated).
+* We will have array F with the meaning:
+F[k] is the ending value of a subset increasing the length k (at the time being calculated).
 > We will use the same functions lower_bound and BinarySearch in below !
 * Declare vector F, with all ![F](https://github.com/phuocVu-IT/kyThuatLapTrinh/blob/master/Dynamic/LIS/Formal/CodeCogsEqn(5).png)
 * Browse from ![N](https://github.com/phuocVu-IT/kyThuatLapTrinh/blob/master/Dynamic/LIS/Formal/CodeCogsEqn(6).png), with every element a[i]
