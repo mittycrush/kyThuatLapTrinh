@@ -18,6 +18,10 @@
     ```
 2. Concept
 * In other words, the LIS of A is a sequence A ![A(i)](https://github.com/phuocVu-IT/kyThuatLapTrinh/blob/master/Dynamic/LIS/Formal/CodeCogsEqn.png)
+* Formula:
+> Call F(i) is the longest series of increments ending in A[i], we have the formula
+* ![formula](https://github.com/phuocVu-IT/kyThuatLapTrinh/blob/master/Dynamic/LIS/Formal/CodeCogsEqn%20(1).png)
+* With ![dk](https://github.com/phuocVu-IT/kyThuatLapTrinh/blob/master/Dynamic/LIS/Formal/CodeCogsEqn%20(3).png) and ![dk1](https://github.com/phuocVu-IT/kyThuatLapTrinh/blob/master/Dynamic/LIS/Formal/CodeCogsEqn%20(4).png)
 
 
         
