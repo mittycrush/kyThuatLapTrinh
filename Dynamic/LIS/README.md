@@ -1,7 +1,7 @@
 # **Longest Increases Of The Subset**
-> Finding the longest increases of the the subset by dynamic
+> Find *the longest increases of the the subset (LIS)* by dynamic
 1. **Input**
-* A list of N integer (1 <= N <= 30000). Finding the amount of LIS and print LIS.
+* A list of N integer (1 <= N <= 30000). Find the amount of LIS and print LIS.
 * Init: 
     * The first line contains an integer N.
     * The second line contains N numbers describing the range.
@@ -13,7 +13,7 @@
     ```
     * Output:
     ```
-    5
+    6
     1 2 4 5 6 8
     ```
 2. Concept
@@ -23,7 +23,7 @@
 * ![formula](https://github.com/phuocVu-IT/kyThuatLapTrinh/blob/master/Dynamic/LIS/Formal/CodeCogsEqn%20(1).png)
 * With ![dk](https://github.com/phuocVu-IT/kyThuatLapTrinh/blob/master/Dynamic/LIS/Formal/CodeCogsEqn%20(3).png) and ![dk1](https://github.com/phuocVu-IT/kyThuatLapTrinh/blob/master/Dynamic/LIS/Formal/CodeCogsEqn%20(4).png)
 
-## **Following the original algorithm**
+## Following the original algorithm
 > Complexity time is ![complex](https://github.com/phuocVu-IT/kyThuatLapTrinh/blob/master/Dynamic/LIS/Formal/CodeCogsEqn%20(2).png) 
 ### Source code C++
 ``` C++
@@ -64,7 +64,7 @@ int longestSubset(int n) {
     for (int i = 0; i < n; ++i) {
 		int k = lower_bound(F.begin(), F.end(), a[i]) - F.begin();
 		F[k] = a[i];
-		result = max(result, k);
+		result = max(result, k + 1);
 	}
     return result;
 }
@@ -99,12 +99,22 @@ int longestSubset(int n) {
 	for (int i = 0; i < n; ++i) {
 		int k = BinarySearch(F.size(), a[i]);
 		F[k] = a[i];
-		result = max(result, k);
+		result = max(result, k + 1);
 	}
 	return result;
 }
 ```
 * **Complexity** 
 > The complexity of these two functions is O(N*log N)
-
+3. **Tracing to find LIS**
+> Using improved by Binary Search, we have array F and length of LIS is k
+* Now tracing from F[0] to F[k] :
+```C++
+void tracing(int k) {
+	int i = 0;
+	for (int i = 0; i < k; ++i) {
+		cout << F[i] << " ";
+	}
+}
+```
 
