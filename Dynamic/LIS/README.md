@@ -23,7 +23,7 @@
 * ![formula](https://github.com/phuocVu-IT/kyThuatLapTrinh/blob/master/Dynamic/LIS/Formal/CodeCogsEqn%20(1).png)
 * With ![dk](https://github.com/phuocVu-IT/kyThuatLapTrinh/blob/master/Dynamic/LIS/Formal/CodeCogsEqn%20(3).png) and ![dk1](https://github.com/phuocVu-IT/kyThuatLapTrinh/blob/master/Dynamic/LIS/Formal/CodeCogsEqn%20(4).png)
 
-### Following the original algorithm
+## **Following the original algorithm**
 > Complexity time is ![complex](https://github.com/phuocVu-IT/kyThuatLapTrinh/blob/master/Dynamic/LIS/Formal/CodeCogsEqn%20(2).png) 
 ### Source code C++
 ``` C++
@@ -43,7 +43,7 @@ int longestSubset(int n) {
     //Because the flag is in the last and appears in the result
 }
 ```
-### **Improved by using Binary Search**
+## **Improved by using Binary Search**
 > Concept: 
 * We will have array B with the meaning:
 B[k] is the ending value of a subset increasing the length k (at the time being calculated).
