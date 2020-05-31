@@ -46,7 +46,7 @@ int longestSubstring(string X, string Y) {
             }
         }
     }
-	return L[m][n];
+    return L[m][n];
 }
 ```
 ### Explain
