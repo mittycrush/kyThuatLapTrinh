@@ -23,7 +23,7 @@
 2. **Concept**
 > *Let L[i][j] be the longest common substring of the string X[i] consisting of i characters the first part of X and the string Y[j] consist of the first j characters of Y.*
 * We have a formula dynamic programming: 
-![Formula](https://github.com/phuocVu-IT/Programming-Techniques/blob/master/Dynamic/LCS/IMG/CodeCogsEqn.gif)
+> ![Formula](https://github.com/phuocVu-IT/Programming-Techniques/blob/master/Dynamic/LCS/IMG/CodeCogsEqn.gif)
 3. **Follow the original algorithm**
 ```C++
 //longest common substring
@@ -55,7 +55,7 @@ int longestSubstring(string X, string Y) {
     A simple solution is to one by one consider all substrings of the first string and for every substring check if it's a substring in the second string. Keep check of the maximum length substring.
     When we have completed the length of two strings, the result of the longest common substring to look for is L[m][n].
 * And array L will be like below *(in example)*:
-![ARRAY](https://github.com/phuocVu-IT/Programming-Techniques/blob/master/Dynamic/LCS/IMG/output.png)
+> ![ARRAY](https://github.com/phuocVu-IT/Programming-Techniques/blob/master/Dynamic/LCS/IMG/output.png)
 
 4. Complexity
 * Time Complexity: O(m*n)
