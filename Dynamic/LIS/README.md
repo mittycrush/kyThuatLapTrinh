@@ -1,5 +1,5 @@
-# **Longest Increases Of The Subset**
-> Find *the longest increases of the subset (LIS)* by dynamic
+# **Longest Increasing Subsequence**
+> Find *the L\longest increasing subsequence (LIS)* by dynamic
 1. **Input**
 * A list of N integer (1 <= N <= 30000). Find the amount of LIS and print LIS.
 * Init: 
@@ -16,11 +16,11 @@
     6
     1 2 4 5 6 8
     ```
-> Explanation: The longest subset is the subset A[1] = 1 < A[2] = 2 < A[3] = 4 < A[5] = 5 < A[8] = 6 < A[9] = 8, and this length is 6
+> Explanation: The longest increasing subsequence A[1] = 1 < A[2] = 2 < A[3] = 4 < A[5] = 5 < A[8] = 6 < A[9] = 8, and this length is 6
 2. **Concept**
 * In other words, the LIS of A is a sequence A ![A(i)](https://github.com/phuocVu-IT/kyThuatLapTrinh/blob/master/Dynamic/LIS/Formal/CodeCogsEqn.png)
 * Formula:
-> Call F(i) is the longest subset of increments ending in A[i], we have the formula
+> Call F(i) is the longest subsequence of increments ending in A[i], we have the formula
 * ![formula](https://github.com/phuocVu-IT/kyThuatLapTrinh/blob/master/Dynamic/LIS/Formal/CodeCogsEqn%20(1).png)
 * With ![dk](https://github.com/phuocVu-IT/kyThuatLapTrinh/blob/master/Dynamic/LIS/Formal/CodeCogsEqn%20(3).png) and ![dk1](https://github.com/phuocVu-IT/kyThuatLapTrinh/blob/master/Dynamic/LIS/Formal/CodeCogsEqn%20(4).png)
 
@@ -46,7 +46,7 @@ int longestSubset(int n) {
 ## **Improved by using Binary Search**
 > Concept: 
 * We will have array F with the meaning:
-F[k] is the ending value of a subset increasing the length k (at the time being calculated).
+F[k] is the ending value of a subsequence increasing the length k (at the time being calculated).
 > We will use the same functions lower_bound and BinarySearch in below!
 * Declare vector F, with all ![F](https://github.com/phuocVu-IT/kyThuatLapTrinh/blob/master/Dynamic/LIS/Formal/CodeCogsEqn(5).png)
 * Browse from ![N](https://github.com/phuocVu-IT/kyThuatLapTrinh/blob/master/Dynamic/LIS/Formal/CodeCogsEqn(6).png), with every element a[i]
