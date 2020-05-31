@@ -1,4 +1,4 @@
-# Longest common substring
+# Longest Common Substring
 > **Dynamic Programming** can be used to find the *longest common substring (LCS)*
 1. **Input**
 * Given that the two strings X and Y. Length X, Y <= 2000.  look for LCS of both X and Y.
