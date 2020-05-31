@@ -1,5 +1,5 @@
 # **Longest Increasing Subsequence**
-> Find *the L\longest increasing subsequence (LIS)* by dynamic
+> Find *the longest increasing subsequence (LIS)* by dynamic
 1. **Input**
 * A list of N integer (1 <= N <= 30000). Find the amount of LIS and print LIS.
 * Init: 
