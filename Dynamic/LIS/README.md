@@ -16,7 +16,7 @@
     6
     1 2 4 5 6 8
     ```
-> The longest subset is the subset A[1] = 1 < A[2] = 2 < A[3] = 4 < A[5] = 5 < A[8] = 6 < A[9] = 8, and this length is 6
+> Explanation: The longest subset is the subset A[1] = 1 < A[2] = 2 < A[3] = 4 < A[5] = 5 < A[8] = 6 < A[9] = 8, and this length is 6
 2. **Concept**
 * In other words, the LIS of A is a sequence A ![A(i)](https://github.com/phuocVu-IT/kyThuatLapTrinh/blob/master/Dynamic/LIS/Formal/CodeCogsEqn.png)
 * Formula:
