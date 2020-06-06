@@ -58,6 +58,7 @@ int longestSublist(int n) {
 	F.resize(n + 1, MAX);
 	int result = 0;
 	for (int i = 0; i < n; ++i) {
+		// choose your prefer func :v
 		//int k = lower_bound(F.begin(), F.end(), a[i]) - F.begin();
 		int k = BinarySearch(F.size(), a[i]);
 		F[k] = a[i];
