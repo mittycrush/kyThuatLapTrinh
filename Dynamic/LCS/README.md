@@ -28,32 +28,24 @@
 ```C++
 //longest common substring
 int longestSubstring(string X, string Y) {
-    int L[100][100];
     int m = X.length();
     int n = Y.length();
-    for (int i = 0; i <= m; i++) {
-        for (int j = 0; j <= n; j++) {
-            if (i == 0 || j == 0) {
+    for (int i = m; i >= 0; i--)
+        for (int j = n; j >= 0; j--) {
+            if (X[i] == '\0' || Y[j] == '\0') 
                 L[i][j] = 0;
-            }
-            else {
-                if (X[i] == Y[j]) {
-                    L[i][j] = L[i - 1][j - 1] + 1;
-                }
-                else {
-                    L[i][j] = max(L[i - 1][j], L[i][j - 1]);
-                }
-            }
+            else if (X[i] == Y[j]) 
+                L[i][j] = 1 + L[i + 1][j + 1];
+            else L[i][j] = max(L[i + 1][j], L[i][j + 1]);
         }
-    }
-    return L[m][n];
+    return L[0][0];
 }
 ```
 ### Explain
 * Let m and n be the lengths of first and second strings respectively.
 
     A simple solution is to one by one consider all substrings of the first string and for every substring check if it's a substring in the second string. Keep check of the maximum length substring.
-    When we have completed the length of two strings, the result of the longest common substring to look for is L[m][n].
+    When we have completed the length of two strings, the result of the longest common substring to look for is L[0][0].
 * And array L will be like below *(in example)*:
 > ![ARRAY](https://github.com/phuocVu-IT/Programming-Techniques/blob/master/Dynamic/LCS/IMG/output.png)
 
@@ -63,34 +55,34 @@ int longestSubstring(string X, string Y) {
 > m and n be the lengths of first and second strings
 5. Tracing
 * The array L has stored the state the algorithm has created before. 
-* To find the largest general substring from the state table, we will start from the last state (ie L[m][n]).
-* Tracing status starts from L[m][n], the current state after each implementation will depend on  X[m] != Y[n] and the destination state occurs when m or n == 0
-* The current state is m and n: if (X[m] == X[n]) 
-	* the previous state is m - 1 and n - 1
+* To find the largest general substring from the state table, we will start from the first state (ie L[0][0]).
+* Tracing status starts from L[0][0], the current state after each implementation will depend on  X[i] != Y[j] (i, j from 0) and the destination state occurs when i == m or j == n 
+* The current state is i and j: if (X[i] == X[j]) 
+	* the previous state is i + 1 and j + 1
 		* will push in a string result
-	* else L[m - 1][n] > L[m][n - 1] 
-		* previous m--
-		* or n--
+	* else L[i + 1][j] > L[i][j + 1] 
+		* previous i++
+		* or j++
 * When destination state, the result will be the inverse of the result string because when tracing we start from m and n.
 ```C++
-void tracing(string a, string b) {
-    int i = a.length() - 1;
-    int j = b.length() - 1;
+void tracing(string X, string Y) {
+    int m = X.length();
+    int n = Y.length();
     string lcs;
-    while (i >= 0 && j >= 0) {
-        if (a[i] == b[j]) {
-            lcs.push_back(a[i]);
-            i--;
-            j--;
+    int i = 0, j = 0;
+    while (i < m && j < n) {
+        if (X[i] == Y[j]) {
+            lcs.push_back(X[i]);
+            i++;
+            j++;
         }
         else {
-            if (L[i - 1][j] > L[i][j - 1]) 
-                i--;
-            else 
-                j--;
+            if (L[i + 1][j] > L[i][j + 1])
+                i++;
+            else
+                j++;
         }
     }
-    reverse(lcs.begin(), lcs.end());
     cout << lcs;
 }
 ```
