@@ -24,43 +24,36 @@ void init(string& s) {
     getline(cin, s);
 }
 void tracing(string X, string Y) {
-    int i = X.length() - 1;
-    int j = Y.length() - 1;
+    int m = X.length();
+    int n = Y.length();
     string lcs;
-    while (i >= 0 && j >= 0) {
+    int i = 0, j = 0;
+    while (i < m && j < n) {
         if (X[i] == Y[j]) {
             lcs.push_back(X[i]);
-            i--;
-            j--;
+            i++;
+            j++;
         }
         else {
-            if (L[i - 1][j] > L[i][j - 1])
-                i--;
+            if (L[i + 1][j] > L[i][j + 1])
+                i++;
             else
-                j--;
+                j++;
         }
     }
-    reverse(lcs.begin(), lcs.end());
     cout << lcs;
 }
 int longestSubstring(string X, string Y) {
-    int n1 = X.length();
-    int n2 = Y.length();
-    int re = 0;
-    for (int i = 0; i <= n1; i++) {
-        for (int j = 0; j <= n2; j++) {
-            if (i == 0 || j == 0) {
+    int m = X.length();
+    int n = Y.length();
+    for (int i = m; i >= 0; i--)
+        for (int j = n; j >= 0; j--)
+        {
+            if (X[i] == '\0' || Y[j] == '\0') 
                 L[i][j] = 0;
-            }
-            else {
-                if (X[i] == Y[j]) {
-                    L[i][j] = L[i - 1][j - 1] + 1;
-                }
-                else {
-                    L[i][j] = max(L[i - 1][j], L[i][j - 1]);
-                }
-            }
+            else if (X[i] == Y[j]) 
+                L[i][j] = 1 + L[i + 1][j + 1];
+            else L[i][j] = max(L[i + 1][j], L[i][j + 1]);
         }
-    }
-    return L[n1][n2];
+    return L[0][0];
 }
