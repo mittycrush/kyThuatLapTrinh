@@ -33,3 +33,29 @@
     * endpoint := par[endPoint]
     * push nums[endPoint] into ret
 * return reverse the list ret
+### Source Code 
+``` C++
+vector<int> longestSubset(int n) {
+    vector <int> res;
+    int endPoint = 0;
+    int resLen = 1;
+    sort(nums.begin(), nums.end());
+    vector <int> len(n, 1);
+    vector <int> par(n, 0);
+    for (int i = 1; i < n; i++) {
+        par[i] = i;
+        for (int j = 0; j < i; j++) {
+            if (nums[i] % nums[j] == 0 && len[j] + 1 > len[i]) {
+                len[i] = len[j] + 1;
+                par[i] = j;
+            }
+        }
+        if (len[i] > retLen) {
+            resLen = len[i];
+            endPoint = i;
+        }
+    }
+    reverse(res.begin(), res.end());
+    return res;
+}
+```
