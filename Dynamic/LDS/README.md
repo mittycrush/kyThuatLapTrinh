@@ -11,7 +11,9 @@
 3 4 16 8
 ```
 #### Output:
-```4 8 16```
+```
+4 8 16
+```
 2. Concept
 * As you see in the output, the array is sorted !!!
 > Yeah! One step to have an algorithm to solve this problem
